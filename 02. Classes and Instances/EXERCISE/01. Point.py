@@ -1,6 +1,5 @@
 # https://judge.softuni.bg/Contests/Practice/Index/1937#0
 from math import sqrt
-from math import pow
 
 
 class Point:
@@ -16,10 +15,7 @@ class Point:
         self.y = new_y
 
     def distance(self, x, y):
-        side_a = abs(x - self.x)
-        side_b = abs(y - self.y)
-        distance = sqrt(pow(side_a, 2) + pow(side_b, 2))
-        return distance
+        return sqrt((x - self.x) ** 2 + (y - self.y) ** 2)
 
 
 p = Point(2, 4)

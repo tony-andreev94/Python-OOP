@@ -13,8 +13,7 @@ class Employee:
         return f"{self.first_name} {self.last_name}"
 
     def get_annual_salary(self):
-        annual_salary = self.salary * 12
-        return annual_salary
+        return self.salary * 12
 
     def raise_salary(self, amount):
         self.salary += amount

@@ -1,55 +1,62 @@
 # https://judge.softuni.bg/Contests/Practice/Index/1937#4
-# 87/100
-
 
 class Time:
-    max_hours = 24
-    max_minutes = 60
-    max_seconds = 60
+    max_hours = 23
+    max_minutes = 59
+    max_seconds = 59
 
     def __init__(self, hours, minutes, seconds):
         self.hours = hours
         self.minutes = minutes
         self.seconds = seconds
 
-    def set_time(self, hours, minutes, seconds):
+    def set_time(self, hours, minutes, seconds):  # method name could be change_time
         self.hours = hours
         self.minutes = minutes
         self.seconds = seconds
 
+    def hours_formatter(self):
+        if self.hours < 10 or self.hours == 0:
+            return f'0{self.hours}'
+        return self.hours
+
+    def minutes_formatter(self):
+        if self.minutes < 10 or self.minutes == 0:
+            return f'0{self.minutes}'
+        return self.minutes
+
+    def seconds_formatter(self):
+        if self.seconds < 10 or self.seconds == 0:
+            return f'0{self.seconds}'
+        return self.seconds
+
     def get_time(self):
-        if self.hours >= 10:
-            hh = self.hours
-        else:
-            hh = "0" + str(self.hours)
-
-        if self.minutes >= 10:
-            mm = self.minutes
-        else:
-            mm = "0" + str(self.minutes)
-
-        if self.seconds >= 10:
-            ss = self.seconds
-        else:
-            ss = "0" + str(self.seconds)
-
-        return f"{hh}:{mm}:{ss}"
+        return f"{self.hours_formatter()}:{self.minutes_formatter()}:{self.seconds_formatter()}"
 
     def next_second(self):
         self.seconds += 1
-        if self.seconds >= 60:
-            self.seconds = 0
-            self.minutes += 1
-            if self.minutes >= 60:
-                self.minutes = 0
-                self.hours += 1
-                if self.hours == 25:
-                    self.hours = 1
+        if self.seconds <= self.max_seconds:
+            return self.get_time()
 
+        self.seconds = 0
+        self.minutes += 1
+        if self.minutes <= self.max_minutes:
+            return self.get_time()
+
+        self.minutes = 0
+        self.hours += 1
+        if self.hours <= self.max_hours:
+            return self.get_time()
+
+        self.hours = 0
         return self.get_time()
 
 
-time = Time(9, 30, 60)
+time = Time(9, 30, 59)
 print(time.next_second())
 
+time = Time(10, 59, 59)
+print(time.next_second())
 
+time = Time(23, 59, 59)
+print(time.next_second())
