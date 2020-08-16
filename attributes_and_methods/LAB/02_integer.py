@@ -1,5 +1,5 @@
 # https://judge.softuni.bg/Contests/Practice/Index/2430#1
-# 87/100
+# TODO 87/100
 
 class Integer:
 

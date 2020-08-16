@@ -1,5 +1,5 @@
 # https://judge.softuni.bg/Contests/Practice/Index/2430#0
-# 83 / 100
+# TODO 83 / 100
 
 class Store:
 
