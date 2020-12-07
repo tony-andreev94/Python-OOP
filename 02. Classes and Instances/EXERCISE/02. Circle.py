@@ -1,23 +1,18 @@
 # https://judge.softuni.bg/Contests/Practice/Index/1937#1
-# 80/100
-
-
 class Circle:
     pi = 3.14
 
-    def __init__(self, radius):
+    def __init__(self, radius: int):
         self.radius = radius
 
     def set_radius(self, new_radius):
         self.radius = new_radius
 
     def get_area(self):
-        area = self.pi * self.radius * self.radius
-        return f"{area:.2f}"
+        return round(self.pi * self.radius ** 2, 2)
 
     def get_circumference(self):
-        circumference = 2 * self.pi * self.radius
-        return circumference
+        return 2 * self.pi * self.radius
 
 
 circle = Circle(10)
