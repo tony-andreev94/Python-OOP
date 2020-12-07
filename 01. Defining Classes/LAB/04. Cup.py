@@ -25,6 +25,25 @@ class Cup:
         return self.size - self.quantity
 
 
+class Cup2:
+    def __init__(self, size, quantity):
+        self.size = size
+        self.quantity = quantity
+
+    def check_capacity(self, milliliters):
+        if milliliters <= self.size - self.quantity:
+            return True
+        else:
+            return False
+
+    def fill(self, milliliters):
+        if self.check_capacity(milliliters):
+            self.quantity += milliliters
+
+    def status(self):
+        return self.size - self.quantity
+
+
 cup = Cup(100, 50)
 cup.fill(50)
 cup.fill(10)
