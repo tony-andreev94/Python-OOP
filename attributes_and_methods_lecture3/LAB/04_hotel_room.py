@@ -1,5 +1,5 @@
-from attributes_and_methods.LAB.project.hotel import Hotel
-from attributes_and_methods.LAB.project.room import Room
+from attributes_and_methods_lecture3.LAB.project.hotel import Hotel
+from attributes_and_methods_lecture3.LAB.project.room import Room
 
 hotel = Hotel.from_stars(5)
 
