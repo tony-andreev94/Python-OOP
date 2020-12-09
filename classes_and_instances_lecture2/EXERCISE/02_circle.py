@@ -1,4 +1,3 @@
-# https://judge.softuni.bg/Contests/Practice/Index/1937#1
 class Circle:
     pi = 3.14
 
@@ -9,7 +8,7 @@ class Circle:
         self.radius = new_radius
 
     def get_area(self):
-        return round(Circle.pi * self.radius ** 2, 2)
+        return round(Circle.pi * self.radius**2, 2)
 
     def get_circumference(self):
         return 2 * Circle.pi * self.radius
@@ -19,3 +18,5 @@ circle = Circle(10)
 circle.set_radius(12)
 print(circle.get_area())
 print(circle.get_circumference())
+
+
